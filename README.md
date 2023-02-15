@@ -1,4 +1,4 @@
-# Project Sisvote
+# Project TecnoParq
 
 To run this project simply run `./run.sh` or `sudo ./run.sh`
 
