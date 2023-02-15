@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+
+  db:
+    image: "postgres:10-alpine"
+    container_name: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./environment/.env.db
+    ports:
+      - "5432:5432"
+
+  tecnoparq:
+    container_name: tecnoParq
+    build: ./tecnoParq
+    ports:
+      - "8003:8003"
+    volumes:
+      - ./tecnoParq:/tecnoParq
+    env_file:
+      - ./environment/.env.backend
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
