@@ -36,8 +36,6 @@ INSTALLED_APPS = [
 
     # apps
     'app.account',
-    # 'app.eleccion',
-    # 'app.matricula'
 ]
 
 MIDDLEWARE = [

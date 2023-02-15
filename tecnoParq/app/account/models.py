@@ -10,7 +10,8 @@ class Account(TimeStampedModel):
     last_name = models.CharField('Apellidos', max_length=100)
     username = models.CharField('Nombre de usuario', max_length=100)
     password = models.CharField('Contraseña', max_length=100)
-    pricehour = models.IntegerField('Número de horas', max_length=100)
+    pricehour = models.IntegerField('Valor por horas', max_length=100)
+    admin = models.BooleanField('Es admin', default=False)
 
     def __str__(self):
         return f"{self.identify} {self.last_name}, {self.name}"
@@ -32,4 +33,6 @@ class Input_Output(TimeStampedModel):
     time_in = models.TimeField('Hora de entrada',blank=True, null=True)
     date_out = models.DateField('Fecha de salida', blank=True, null=True)
     time_out = models.TimeField('Hora de salida', blank=True, null=True)
+    hours_work = models.IntegerField('Horas trabajadas', blank=True, null=True)
+    price_work = models.BigIntegerField('Total a pagar', blank=True, null=True)
 
